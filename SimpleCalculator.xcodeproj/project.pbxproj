@@ -350,6 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M73D695JDS;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCalculator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "简单算";
@@ -379,6 +380,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M73D695JDS;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCalculator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "简单算";
