@@ -354,6 +354,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCalculator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "简单算";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "将访问您的地理位置";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "将访问您的地理位置";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "将访问您的相册";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "该ID将用于向您推送个性化广告";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
@@ -384,6 +388,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleCalculator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "简单算";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "将访问您的地理位置";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "将访问您的地理位置";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "将访问您的相册";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "该ID将用于向您推送个性化广告";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
