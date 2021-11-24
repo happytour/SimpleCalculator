@@ -8,6 +8,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import <LYAdSDK/LYAdSDK.h>
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AdSupport/AdSupport.h>
 
 @interface AppDelegate () <LYSplashAdDelegate>
 
@@ -35,9 +37,6 @@
     CGRect splashFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     self.splashAd = [[LYSplashAd alloc] initWithFrame:splashFrame slotId:@"31036636" viewController:self.rootController];
     self.splashAd.delegate = self;
-    [self.splashAd loadAd];
-    
-    self.lastActiveTime = [[NSDate date] timeIntervalSince1970];
     return YES;
 }
 
@@ -46,13 +45,28 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    if (@available(iOS 14, *)) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+            [self loadAd];
+        }];
+    } else {
+        [self loadAd];
+    }
+}
+
+- (void)loadAd {
     NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
-    //指定一个最小展示间隔
-    if (time - self.lastActiveTime >= 60 && self.didEnterBackground) {
+    if (self.lastActiveTime == 0) {
         self.lastActiveTime = time;
         [self.splashAd loadAd];
+    } else {
+        //指定一个最小展示间隔
+        if (time - self.lastActiveTime >= 60 && self.didEnterBackground) {
+            self.lastActiveTime = time;
+            [self.splashAd loadAd];
+        }
+        self.didEnterBackground = NO;
     }
-    self.didEnterBackground = NO;
 }
 
 #pragma mark - LYSplashAdDelegate
